@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1047794196775",
+    "firebase_url": "https://law-plan.firebaseio.com",
+    "project_id": "law-plan",
+    "storage_bucket": "law-plan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047794196775:android:c49d8ee9c9a0a5f89ac902",
+        "android_client_info": {
+          "package_name": "com.dicoding.myfirebasechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047794196775-r0erm8rmk9q6i0j0kgd407lj28bjslji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dicoding.myfirebasechat",
+            "certificate_hash": "59fa52ef840a7c819f4f1e75de14ac9f913eddae"
+          }
+        },
+        {
+          "client_id": "1047794196775-42q6l5juofn5480diou7m65nu6uuqf57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz1x5Z8s-Aplaf97UuUaZpxFFxmdMsfzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047794196775-42q6l5juofn5480diou7m65nu6uuqf57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
