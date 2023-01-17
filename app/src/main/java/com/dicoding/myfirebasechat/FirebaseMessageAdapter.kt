@@ -22,20 +22,49 @@ class FirebaseMessageAdapter(
     }
 
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int, message: MessageModel) {
+        holder.bind(message)
     }
 
     inner class MessageViewHolder(private val binding: ItemMessageBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MessageModel) {
-            binding.tvMessage.text = item.text
-            setTextColor(item.name, binding.tvMessage)
-            binding.tvMessenger.text = item.name
-            Glide.with(itemView.context)
-                .load(item.photoUrl)
-                .circleCrop()
-                .into(binding.ivMessenger)
+            if (currentUsername == item.name && item.name != null) {
+                binding.tvMessageRight.text = item.text
+                setTextColor(item.name, binding.tvMessageRight)
+                binding.tvMessengerRight.text = item.name
+                Glide.with(itemView.context)
+                    .load(item.photoUrl)
+                    .circleCrop()
+                    .into(binding.ivMessengerRight)
 
-            if (item.timestamp != null) {
-                binding.tvTimestamp.text = DateUtils.getRelativeTimeSpanString(item.timestamp)
+                if (item.timestamp != null) {
+                    binding.tvTimestampRight.text = DateUtils.getRelativeTimeSpanString(item.timestamp)
+                }
+
+                binding.apply {
+                    tvMessage.alpha = 0F
+                    tvMessenger.alpha = 0F
+                    ivMessenger.alpha = 0F
+                    tvTimestamp.alpha = 0F
+                }
+            } else {
+                binding.tvMessage.text = item.text
+                setTextColor(item.name, binding.tvMessage)
+                binding.tvMessenger.text = item.name
+                Glide.with(itemView.context)
+                    .load(item.photoUrl)
+                    .circleCrop()
+                    .into(binding.ivMessenger)
+
+                if (item.timestamp != null) {
+                    binding.tvTimestamp.text = DateUtils.getRelativeTimeSpanString(item.timestamp)
+                }
+
+                binding.apply {
+                    tvMessageRight.alpha = 0F
+                    tvMessengerRight.alpha = 0F
+                    ivMessengerRight.alpha = 0F
+                    tvTimestampRight.alpha = 0F
+                }
             }
         }
 
